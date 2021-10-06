@@ -10,7 +10,14 @@ function change() {
         alert("Maze size should be between 2 and 200 inclusively.");
         return false;
     }
-    mazeSize = mazeSize * 2;
+    if (mazeSize % 2 == 0)
+    {
+        mazeSize = mazeSize * 2 - 1;
+    }
+    else
+    {
+        mazeSize = mazeSize * 2;
+    }
     var grid = [];
     var visited = [];
     for (var i = 0; i < mazeSize; i++)
