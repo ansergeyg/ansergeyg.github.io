@@ -12,3 +12,6 @@
   .wrapper div:hover {
     background-color: green;
   }
+  div#maze_container {
+    margin-top: 10px;
+  }

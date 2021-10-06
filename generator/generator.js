@@ -1,23 +1,19 @@
+// TODO: Refactor code after all functions are done.
 var stack = [];
 var dx = [0, 2, 0, -2];
 var dy = [-2, 0, 2, 0];
 
 function change() {
-    var mazeSize = document.getElementById("maze_size").value;
     var mazeContainer = document.getElementById("maze_container");
+    //TODO: Add clear button
+    mazeContainer.innerHTML = "";
+    var mazeSize = document.getElementById("maze_size").value;
     if (mazeSize > 100 || mazeSize < 2)
     {
-        alert("Maze size should be between 2 and 200 inclusively.");
+        alert("Maze size should be between 2 and 100 inclusively.");
         return false;
     }
-    if (mazeSize % 2 == 0)
-    {
-        mazeSize = mazeSize * 2 - 1;
-    }
-    else
-    {
-        mazeSize = mazeSize * 2;
-    }
+    mazeSize = mazeSize * 2 + 1;
     var grid = [];
     var visited = [];
     for (var i = 0; i < mazeSize; i++)
