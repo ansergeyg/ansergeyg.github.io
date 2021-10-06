@@ -10,7 +10,7 @@
     border: 1px solid;
   }
   .wrapper div:hover {
-    background-color: green;
+    background-color: green !important;
   }
   div#maze_container {
     margin-top: 10px;
