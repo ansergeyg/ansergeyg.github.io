@@ -5,6 +5,12 @@ var dy = [-2, 0, 2, 0];
 function change() {
     var mazeSize = document.getElementById("maze_size").value;
     var mazeContainer = document.getElementById("maze_container");
+    if (mazeSize > 100 || mazeSize < 2)
+    {
+        alert("Maze size should be between 2 and 200 inclusively.");
+        return false;
+    }
+    mazeSize = mazeSize * 2;
     var grid = [];
     var visited = [];
     for (var i = 0; i < mazeSize; i++)
