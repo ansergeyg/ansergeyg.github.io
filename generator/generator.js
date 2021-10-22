@@ -1,7 +1,41 @@
+function change2()
+{
+    var colors = ["red", "green", "black", "blue", "yellow"];
+    wrapper(colors);
+}
+function wrapper(colors)
+{
+    var testDiv = document.getElementById("test");
+    let i = 0;
+    while (i < 10)
+    {
+        // let testDiv = document.getElementById("test");
+        test(i, colors, testDiv);
+        i++;
+    }
+
+}
+function test(i, colors, testDiv)
+{
+    setTimeout(function() {
+        testDiv.style.backgroundColor = colors[getRandom(colors.length)];
+        let t = testDiv.style.backgroundColor;
+        var g = "test";
+        console.log(i + " " + t);
+        test2(g);
+    }, 2000 * i);
+}
+
+function test2(g)
+{
+    for (var i = 0; i < 10; i++)
+    {
+        console.log(g + " " + i);
+    }
+}
+
 // TODO: Refactor code after all functions are done.
-var stack = [];
-var dx = [0, 2, 0, -2];
-var dy = [-2, 0, 2, 0];
+
 
 function change() {
     var mazeContainer = document.getElementById("maze_container");
@@ -37,13 +71,13 @@ function change() {
         }
     }
     mazeContainer.style.gridTemplateColumns = "repeat(" + mazeSize + ", 20px)";
-    buildMaze(grid, mazeSize, visited);
+    dfs(1, 1, grid, mazeSize, visited);
+    //buildMaze(grid, mazeSize, visited);
 }
 
 function buildMaze(grid, size, visited)
 {
 	//dfs(getRandom(size), getRandom(size), grid, size, visited);
-	dfs(1, 1, grid, size, visited);
 }
 
 function isValid(grid, x, y, size, visited)
@@ -65,12 +99,27 @@ function isValid(grid, x, y, size, visited)
 
 function dfs(x, y, grid, size, visited)
 {
+    let stack = [];
+    let dx = [0, 2, 0, -2];
+    let dy = [-2, 0, 2, 0];
+    let counter = 1;
     stack.push({x: x, y: y});
     while (stack.length > 0)
     {
+        if (counter > size * size)
+        {
+            break;
+        }
+        stepAnimate(counter, stack, visited, grid, size, dx, dy);   
+        counter++;
+    }  
+}
+
+function stepAnimate(counter, stack, visited, grid, size, dx, dy)
+{
+    setTimeout(function() {
         var curCell = stack.pop();
         visited[curCell.x][curCell.y] = true;
-        grid[curCell.x][curCell.y].style.backgroundColor = "white";
         var nextCells = [];
         for (var i = 0; i < dx.length; i++)
         {
@@ -90,8 +139,9 @@ function dfs(x, y, grid, size, visited)
             stack.push({x: curCell.x, y: curCell.y});
             stack.push({x: nextCell.x, y: nextCell.y});
         }
-    }  
+    }, 100 * counter);
 }
+
 function removeWall(curCell, nextCell, grid, visited)
 {
     var dx = curCell.x - nextCell.x;
