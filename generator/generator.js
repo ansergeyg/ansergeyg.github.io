@@ -12,6 +12,7 @@ function wrapper(colors)
         // let testDiv = document.getElementById("test");
         test(i, colors, testDiv);
         i++;
+        
     }
 
 }
