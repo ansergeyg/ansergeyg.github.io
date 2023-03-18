@@ -21,3 +21,11 @@ When importing modules always add .js extension to the end of the file. Otherwis
 import { getPermutations } from "./permutations.js"; 
 
 ----------------------------------------------------------------------------------------------------------------------------------
+How to copy content from div into buffer
+https://developer.mozilla.org/en-US/docs/Web/API/Clipboard
+
+https://web.dev/async-clipboard/
+
+----------------------------------------------------------------------------------------------------------------------------------
+How to select content inside div
+https://www.codingem.com/javascript-click-to-select-all-div-text/

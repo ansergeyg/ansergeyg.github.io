@@ -3,12 +3,14 @@
 <title>Generator</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <script type="module">
-    import {generate} from './src/generator.js'
+    import { generate, onCopyButtonClick } from './src/generator.js'
     document.addEventListener('DOMContentLoaded', generate);
+    document.getElementById('copyButtonId').addEventListener('click', onCopyButtonClick);
 </script>
 </head>
 <body>
 <h4>Permutations generator</h4>
-<div id="rand_container" class="wrapper"></div>
+<button id="copyButtonId">Copy</button>
+<div id="rand_container" class="wrapper" contenteditable="true"></div>
 </body>
 </html>

@@ -12,3 +12,8 @@ export function generate() {
         div.textContent += result[i].toString() + '\n';
     }
 }
+
+export function onCopyButtonClick() {
+    const div = document.getElementById('rand_container');
+    navigator.clipboard.writeText(div.textContent);
+}
