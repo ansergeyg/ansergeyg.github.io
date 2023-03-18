@@ -9,9 +9,9 @@ const n = strSet.length;
 //Remove {}
 strSet = strSet.substring(1, n - 1);
 
-let set = strSet.split(',');
+let set = strSet.split(',') ?? [];
 
-let strSep = queryString.get('sep');
+export let sep = queryString.get('sep') ?? ',';
 
 export function getConverted () {
     return {
