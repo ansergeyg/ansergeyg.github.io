@@ -12,3 +12,7 @@ export function getPermutations(list, result, last) {
         [list[i], list[last]] = [list[last], list[i]];
     }
 }
+
+export function getNextPermutation(){
+
+}
