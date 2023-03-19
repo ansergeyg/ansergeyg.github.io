@@ -1,12 +1,12 @@
 .wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 20px);
+    /* display: grid;
+    grid-template-columns: repeat(3, 20px); */
     margin-top:10px;
   }
   .wrapper div {
-    background-color: white;
-    border: 1px solid;
+    /* background-color: white;
+    border: 1px solid; */
   }
   div#rand_nums_container {
-    margin-top: 10px;
+    /* margin-top: 10px; */
   }

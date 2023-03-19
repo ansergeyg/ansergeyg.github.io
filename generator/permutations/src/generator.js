@@ -8,9 +8,11 @@ export function generate() {
     getPermutations(params.set, result, 0);
 
     let div = document.getElementById('rand_container');
+    let output = '';
     for (let i = 0; i < result.length; i++) {
-        div.textContent += result[i].join(sep) + '\n';
+        output += result[i].join(sep) + '<br/>';
     }
+    div.innerHTML = output;
 }
 
 export function onCopyButtonClick() {
