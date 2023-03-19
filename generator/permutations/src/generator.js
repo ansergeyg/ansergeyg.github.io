@@ -10,7 +10,7 @@ export function generate() {
     let div = document.getElementById('rand_container');
     let output = '';
     for (let i = 0; i < result.length; i++) {
-        output += result[i].join(sep) + '<br/>';
+        output += result[i].join(sep) + '\r\n' + '<br/>';
     }
     div.innerHTML = output;
 }
